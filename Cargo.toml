@@ -7,8 +7,11 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-# franklin-crypto = {path = "../franklin-crypto", features = ["multicore", "plonk"]}
-franklin-crypto = {git = "https://github.com/matter-labs/franklin-crypto", branch = "beta", features = ["multicore", "plonk"]}
+franklin-crypto = {git = "https://github.com/matter-labs/franklin-crypto", branch = "beta", features = ["plonk"]}
 sha2 = "0.9"
 hex = "*"
 once_cell = "*"
+
+[features]
+multicore = ["franklin-crypto/multicore"]
+wasm = []
